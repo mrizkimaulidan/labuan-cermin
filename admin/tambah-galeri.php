@@ -17,7 +17,9 @@ if (isset($_POST['submit'])) {
     $query = "INSERT INTO galleries(url) VALUES('$targetFile')";
     mysqli_query($conn, $query);
 
+    $_SESSION['message'] = 'Data berhasil ditambahkan!';
     header('Location: galeri.php');
+    exit;
 }
 ?>
 

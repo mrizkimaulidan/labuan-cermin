@@ -20,6 +20,7 @@ if (isset($_POST['submit'])) {
 
   $_SESSION['login'] = true;
   header('Location: index.php');
+  exit;
 }
 ?>
 
@@ -31,7 +32,7 @@ if (isset($_POST['submit'])) {
         <?php if (isset($_SESSION['message'])) : ?>
           <div class="alert alert-warning" role="alert">
             <?= $_SESSION['message']; ?>
-            <?php session_destroy(); ?>
+            <?php unset($_SESSION['message']); ?>
           </div>
         <?php endif; ?>
         <form action="" method="post">

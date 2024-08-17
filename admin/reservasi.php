@@ -35,6 +35,13 @@ $result = mysqli_query($conn, $query);
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
+                <?php if (isset($_SESSION['message'])) : ?>
+                    <div class="alert alert-success" role="alert">
+                        <?= $_SESSION['message']; ?>
+                        <?php unset($_SESSION['message']); ?>
+                    </div>
+                <?php endif; ?>
+
                 <table class="table">
                     <thead>
                         <tr>

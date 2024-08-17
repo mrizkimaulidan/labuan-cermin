@@ -12,7 +12,9 @@ if (isset($_POST['submit'])) {
     $query = "INSERT INTO services (name, price) VALUES ('$name', '$price')";
     mysqli_query($conn, $query);
 
+    $_SESSION['message'] = 'Data berhasil ditambahkan!';
     header("Location: paket-wisata.php");
+    exit;
 }
 ?>
 

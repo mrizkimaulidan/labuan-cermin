@@ -13,4 +13,6 @@ unlink($row['url']);
 
 mysqli_query($conn, "DELETE FROM galleries WHERE id = $id");
 
+$_SESSION['message'] = 'Data berhasil dihapus!';
 header('Location: galeri.php');
+exit;

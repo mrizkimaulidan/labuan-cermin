@@ -19,7 +19,9 @@ if (isset($_POST['submit'])) {
     $query = "UPDATE services SET name = '$name', price = '$price' WHERE id = $id";
     mysqli_query($conn, $query);
 
+    $_SESSION['message'] = 'Data berhasil diubah!';
     header("Location: ubah-paket-wisata.php?id=$id");
+    exit;
 }
 ?>
 
@@ -30,6 +32,13 @@ if (isset($_POST['submit'])) {
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
+                <?php if (isset($_SESSION['message'])) : ?>
+                    <div class="alert alert-success" role="alert">
+                        <?= $_SESSION['message']; ?>
+                        <?php unset($_SESSION['message']); ?>
+                    </div>
+                <?php endif; ?>
+
                 <form action="" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nama Paket Wisata:</label>

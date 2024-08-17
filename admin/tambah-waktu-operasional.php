@@ -13,7 +13,9 @@ if (isset($_POST['submit'])) {
     $query = "INSERT INTO open_hours(day, time_start, time_end) VALUES('$day', '$timeStart', '$timeEnd')";
     mysqli_query($conn, $query);
 
+    $_SESSION['message'] = 'Data berhasil ditambahkan!';
     header("Location: waktu-operasional.php");
+    exit;
 }
 ?>
 

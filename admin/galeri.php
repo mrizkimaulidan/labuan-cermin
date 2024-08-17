@@ -18,6 +18,13 @@ $result = mysqli_query($conn, $query);
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
+                <?php if (isset($_SESSION['message'])) : ?>
+                    <div class="alert alert-success" role="alert">
+                        <?= $_SESSION['message']; ?>
+                        <?php unset($_SESSION['message']); ?>
+                    </div>
+                <?php endif; ?>
+
                 <div class="d-flex flex-row-reverse">
                     <div class="btn-group pb-3" role="group" aria-label="Basic example">
                         <a href="./tambah-galeri.php" class="btn btn-success">Tambah Galeri</a>

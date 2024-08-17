@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
                     <div class="alert alert-success" role="alert">
                         <?= $_SESSION['message']; ?><br><br>
                         Klik link berikut ini jika ingin melihat detail reservasi Anda : <a href="<?= $_SESSION['url'] ?>" class="link-underline-primary" target="_blank">Detail</a>
-                        <?php session_destroy(); ?>
+                        <?php unset($_SESSION['message']); ?>
                     </div>
                 <?php endif; ?>
 

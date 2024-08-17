@@ -26,7 +26,9 @@ if (isset($_POST['submit'])) {
     $query = "UPDATE galleries SET url = '$targetFile' WHERE id = $id";
     mysqli_query($conn, $query);
 
+    $_SESSION['message'] = 'Data berhasil diubah!';
     header('Location: galeri.php');
+    exit;
 }
 ?>
 

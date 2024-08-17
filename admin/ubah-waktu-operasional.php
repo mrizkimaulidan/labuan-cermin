@@ -20,7 +20,9 @@ if (isset($_POST['submit'])) {
     $query = "UPDATE open_hours SET day = '$day', time_start = '$timeStart', time_end = '$timeEnd' WHERE id = $id";
     mysqli_query($conn, $query);
 
+    $_SESSION['message'] = 'Data berhasil diubah!';
     header("Location: ubah-waktu-operasional.php?id=$id");
+    exit;
 }
 ?>
 

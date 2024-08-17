@@ -66,6 +66,7 @@ if (isset($_POST['submit'])) {
 
     mysqli_query($conn, "UPDATE reservation_summary SET total_price = '$totalPrice' WHERE reservation_id = $id");
 
+    $_SESSION['message'] = 'Data berhasil diubah!';
     header('Location: reservasi.php');
     exit;
 }
