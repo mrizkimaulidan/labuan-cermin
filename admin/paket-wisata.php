@@ -40,8 +40,13 @@ $result = mysqli_query($conn, $query);
                                 <td><?= $row['name']; ?></td>
                                 <td><?= local_currency_format($row['price']); ?></td>
                                 <td>
-                                    <a href="./ubah-paket-wisata.php?id=<?= $row['id']; ?>">Ubah</a> |
-                                    <a href="./hapus-paket-wisata.php?id=<?= $row['id']; ?>">Hapus</a>
+                                    <div class="btn-group" role="group">
+                                        <a href="./ubah-paket-wisata.php?id=<?= $row['id']; ?>" class="btn btn-success">Ubah</a> |
+                                        <form action="./hapus-paket-wisata.php" method="get">
+                                            <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                                            <button type="submit" class="btn btn-danger delete-button">Hapus</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endwhile; ?>

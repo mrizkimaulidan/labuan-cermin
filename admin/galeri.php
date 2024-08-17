@@ -41,7 +41,15 @@ $result = mysqli_query($conn, $query);
                                     <th scope="row"><?= $i++; ?></th>
                                     <td><?= $row['url']; ?></td>
                                     <td><img src="<?= $row['url']; ?>" class="img-thumbnail" width="200" alt="..."></td>
-                                    <td><a href="./ubah-galeri.php?id=<?= $row['id']; ?>">Ubah</a> | <a href="./hapus-galeri.php?id=<?= $row['id']; ?>">Hapus</a></td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <a href="./ubah-galeri.php?id=<?= $row['id']; ?>" class="btn btn-success">Ubah</a> |
+                                            <form action="./hapus-galeri.php" method="get">
+                                                <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                                                <button type="submit" class="btn btn-danger delete-button">Hapus</button>
+                                            </form>
+                                        </div>
+                                    </td>
                                 </tr>
                             <?php endwhile; ?>
                         </tbody>

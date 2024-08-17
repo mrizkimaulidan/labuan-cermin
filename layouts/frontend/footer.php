@@ -2,13 +2,13 @@
     Website Wisata Danau Labuan Cermin 2024
 </div>
 <!-- JAVASCRIPT FILES -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/scrollspy.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script src="../../js/jquery.sticky.js"></script>
+<script src="../../js/aos.js"></script>
+<script src="../../js/jquery.magnific-popup.min.js"></script>
+<script src="../../js/scrollspy.min.js"></script>
+<script src="../../js/custom.js"></script>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function(e) {
         document.addEventListener("click", function(e) {
@@ -54,7 +54,7 @@
 
     });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

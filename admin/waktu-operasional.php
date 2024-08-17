@@ -41,8 +41,13 @@ $result = mysqli_query($conn, $query);
                                 <td><?= $row['day']; ?></td>
                                 <td><?= $row['time_start']; ?> - <?= $row['time_end']; ?></td>
                                 <td>
-                                    <a href="./ubah-waktu-operasional.php?id=<?= $row['id']; ?>">Ubah</a> |
-                                    <a href="./hapus-waktu-operasional.php?id=<?= $row['id']; ?>">Hapus</a>
+                                    <div class="btn-group" role="group">
+                                        <a href="./ubah-waktu-operasional.php?id=<?= $row['id']; ?>" class="btn btn-success">Ubah</a> |
+                                        <form action="./hapus-waktu-operasional.php" method="get">
+                                            <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                                            <button type="submit" class="btn btn-danger delete-button">Hapus</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endwhile; ?>

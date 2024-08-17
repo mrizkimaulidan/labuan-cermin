@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
             <input type="password" class="form-control" name="password" value="secret" id="password" placeholder="Masukan kata sandi...">
           </div>
           <div class="text-center">
-            <a href="../index.php" class="btn btn-secondary">Kembali</a>
+            <a href="../index.php" class="btn btn-light">Kembali</a>
             <button type="submit" name="submit" class="btn btn-primary">Login</button>
           </div>
         </form>

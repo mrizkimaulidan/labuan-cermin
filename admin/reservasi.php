@@ -56,8 +56,13 @@ $result = mysqli_query($conn, $query);
                                 <td><?= $row['number_of_participants']; ?></td>
                                 <td><?= $row['total_service']; ?></td>
                                 <td>
-                                    <a href="./reservasi-detail.php?id=<?= $row['id']; ?>">Detail</a>
-                                    <a href="./hapus-reservasi.php?id=<?= $row['id']; ?>">Hapus</a>
+                                    <div class="btn-group" role="group">
+                                        <a href="./reservasi-detail.php?id=<?= $row['id']; ?>" class="btn btn-info">Detail</a> |
+                                        <form action="./hapus-reservasi.php" method="get">
+                                            <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                                            <button type="submit" class="btn btn-danger delete-button">Hapus</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
