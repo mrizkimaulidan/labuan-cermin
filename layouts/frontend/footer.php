@@ -20,7 +20,6 @@
             }
         });
 
-        // Add event listener to services_id
         document.getElementById('services_id').addEventListener('change', updatePrices);
 
         function updatePrices() {
@@ -28,14 +27,11 @@
             const numberOfDay = parseFloat(document.getElementById('number_of_day').value) || 0; // Convert to number, default to 0 if invalid
             const numberOfParticipants = parseFloat(document.getElementById('number_of_participants').value) || 0; // Convert to number, default to 0 if invalid
 
-            // Get the selected options
             const selectedOptions = Array.from(document.getElementById('services_id').selectedOptions);
 
-            // Extract and convert the prices from the selected option text, then sum them up
             const totalPrice = selectedOptions.reduce((total, option) => {
                 const match = option.textContent.match(/\(Rp[0-9.,]+\)/);
                 if (match) {
-                    // Remove 'Rp' and parentheses, then replace dots and commas to convert to number
                     const priceString = match[0].replace(/[Rp().]/g, '').replace(/,/, '.');
                     const priceNumber = parseFloat(priceString.split('.').join(''));
                     return total + priceNumber;
@@ -43,15 +39,11 @@
                 return total;
             }, 0);
 
-            // Update the HTML elements with the calculated prices
             document.getElementById('service-price').innerHTML = totalPrice.toLocaleString(); // Format totalPrice with commas
             document.getElementById('total-price').innerHTML = (numberOfDay * numberOfParticipants * totalPrice).toLocaleString(); // Format the final total price
         }
 
-        // Add event listener to reservation-form
         document.getElementById('reservation-form').addEventListener('change', updatePrices);
-
-
     });
 </script>
 <script src="../../js/bootstrap.bundle.min.js"></script>

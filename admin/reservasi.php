@@ -58,6 +58,7 @@ $result = mysqli_query($conn, $query);
                                 <td>
                                     <div class="btn-group" role="group">
                                         <a href="./reservasi-detail.php?id=<?= $row['id']; ?>" class="btn btn-info">Detail</a> |
+                                        <a href="./ubah-reservasi.php?id=<?= $row['id']; ?>" class="btn btn-success">Ubah</a> |
                                         <form action="./hapus-reservasi.php" method="get">
                                             <input type="hidden" name="id" value="<?= $row['id'] ?>">
                                             <button type="submit" class="btn btn-danger delete-button">Hapus</button>

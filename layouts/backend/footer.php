@@ -26,6 +26,33 @@
                 }
             });
         });
+
+        $('#services_id, #customer_name, #number_of_day, #number_of_participants').on('change', updatePrices);
+
+        function updatePrices() {
+            const customerName = $('#customer_name').val();
+            const numberOfDay = parseFloat($('#number_of_day').val()) || 0; // Convert to number, default to 0 if invalid
+            const numberOfParticipants = parseFloat($('#number_of_participants').val()) || 0; // Convert to number, default to 0 if invalid
+
+            const selectedOptions = $('#services_id option:selected');
+
+            const totalPrice = selectedOptions.toArray().reduce((total, option) => {
+                const match = $(option).text().match(/\(Rp[0-9.,]+\)/);
+                if (match) {
+                    const priceString = match[0].replace(/[Rp().]/g, '').replace(/,/, '.');
+                    const priceNumber = parseFloat(priceString.split('.').join(''));
+                    return total + priceNumber;
+                }
+                return total;
+            }, 0);
+
+            $('#service-price').text(totalPrice.toLocaleString()); // Format totalPrice with commas
+            $('#total-price').text((numberOfDay * numberOfParticipants * totalPrice).toLocaleString()); // Format the final total price
+        }
+
+        // Initial price update on page load
+        updatePrices();
+
     });
 </script>
 </body>
