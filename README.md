@@ -18,9 +18,11 @@ $ git clone https://github.com/mrizkimaulidan/labuan-cermin.git
 $ git clone git@github.com:mrizkimaulidan/labuan-cermin.git
 ```
 
-2. Buat basis data lalu import file SQL dengan format `.sql` yang ada pada repository ini. Akan menghasilkan tabel-tabel yang diperlukan untuk proyek ini.
+2. Atur kredensial basis data pada file `conn.php` sesuaikan dengan konfigurasi MySQL Anda mulai dari `USERNAME`, `PASSWORD`, dan `NAMA DATABASENYA`.
 
-3. Jalankan PHP Local Server
+3. Buat basis data lalu import file SQL dengan format `.sql` yang ada pada repository ini. Akan menghasilkan tabel-tabel yang diperlukan untuk proyek ini.
+
+4. Jalankan PHP Local Server
 
 ```bash
 $ php -S localhost:6969
